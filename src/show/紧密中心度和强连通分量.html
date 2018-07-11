@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<script src = "d3.min.js" charset = "utf-8"> </script>
+
+	</head>
+
+	<body>
+		<div id = "container">
+            <div id="mainbody">
+				算法说明：我们通过判断两点间最短路是否为无穷大来判断两点是否连通，进而求出强连通分量<br>
+                我们求出了每个强连通分量中节点的紧密中心度,也就是其他点到这个点最短路大小之和<br>
+                紧密中心度越小，代表作者与其余作者联系更紧密，人脉更广<br>
+                <button type="button" onclick="window.location.href='index.html'">返回</button>
+				<button type="button" onclick="fuck(document.getElementById('field1').value)">求紧密中心度</button>
+				请输入一个结点编号，我们会显示其所在强连通分量和其紧密中心度:
+				<input type="text" id="field1" value="50">
+				输入范围：0~599<br>
+				紧密中心度前五小的教授：<br>
+				1.<label id = "l1"></label><br>
+				2.<label id = "l2"></label><br>
+				3.<label id = "l3"></label><br>
+				4.<label id = "l4"></label><br>
+				5.<label id = "l5"></label><br>
+                <div id="maincontent">
+                    <div id="demo">
+                    </div>
+                    
+                </div>
+            </div>
+			<script type='text/javascript'>
+				d3.select("body")
+					.select("#mainbody").select("#maincontent")
+					.select("#demo")
+					.append("svg")
+					.attr("width", width)
+					.attr("height", height);
+				function fuck(node1){
+					d3.json("data/out_author.json",function(error,data){
+						if (error){
+							return console.error(error);
+						}
+						CreateLink(data.nodes, data.edges, node1);
+					})
+				}
+				</script>
+			<div id = "footer">
+		</div>
+	</body>
+	<script src = "show_link.js" charset = "utf-8"></script>
+</html>

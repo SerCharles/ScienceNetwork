@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<script src = "d3.min.js" charset = "utf-8"> </script>
+
+	</head>
+
+	<body>
+		<div id = "container">
+            <div id="mainbody">
+				算法说明：我们使用了brandes算法，在论文网络里求得了论文的介数中心度<br>
+                之后将一个作者的全部论文介数中心度求和，作为作者的介数中心度<br>
+                作者介数中心度越大，代表作者学术水平和影响力越大<br>
+				<button type="button" onclick="window.location.href='index.html'">返回</button><br>
+				介数中心度前五大的教授：<br>
+				1.<label id = "l1"></label><br>
+				2.<label id = "l2"></label><br>
+				3.<label id = "l3"></label><br>
+				4.<label id = "l4"></label><br>
+				5.<label id = "l5"></label><br>
+                <div id="maincontent">
+                    <div id="demo">
+                    </div>
+                
+                </div>
+            </div>
+			<div id = "footer">
+		</div>
+	</body>
+	<script src = "show_between.js" charset = "utf-8"></script>
+</html>

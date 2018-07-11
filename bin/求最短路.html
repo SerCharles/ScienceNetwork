@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<script src = "d3.min.js" charset = "utf-8"> </script>
+
+	</head>
+
+	<body>
+		<div id = "container">
+            <div id="mainbody">
+				算法说明：我们用dijikstra算法求出了任意两点间最短路数值和路径，并且能判断任意两点是否连通<br>
+				<button type="button" onclick="window.location.href='index.html'">返回</button>
+				<button type="button" onclick="fuck(document.getElementById('field1').value, document.getElementById('field2').value)">求最短路</button>
+				请输入起点编号:
+				<input type="text" id="field1" value="52">
+				
+				请输入终点编号:
+				<input type="text" id="field2" value="533">
+				输入范围：0~599
+				<br>
+				<div id = "node_list">
+					
+				</div>
+                <div id="maincontent">
+                    <div id="demo">
+                    </div>
+                    
+                </div>
+            </div>
+			
+			<script type='text/javascript'>
+			function fuck(node1, node2){
+				d3.json("data/out_author.json", function(error, data){
+					if (error){
+						return console.error(error);
+					}
+				d3.json("data/out_shortest_route.json", function(error, data_new){
+					if (error){
+						return console.error(error);
+					}
+				CreatePath(data.nodes, data.edges,data_new.routes,node1,node2);
+				}); 
+				});
+			}
+			</script>
+			<div id = "footer">
+		</div>
+	</body>
+	<script src = "show_shortest_path.js" charset = "utf-8"></script>
+	
+</html>

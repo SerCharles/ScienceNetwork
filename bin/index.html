@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<script src = "d3.min.js" charset = "utf-8"> </script>
+
+	</head>
+
+	<body>
+		<div id = "container">
+            <div id="mainbody">
+                我们以作者为点，作者之间的合作关系为边,边权为1建立了图<br>
+				说明：限于性能限制，仅选取数据中前600个论文用于展示。这些论文都是近几年发表的，有一定代表性。<br>
+				<button type="button" onclick="window.location.href='求最短路.html'">最短路</button>
+				<br>
+				<button type="button" onclick="window.location.href='介数中心度.html'">介数中心度</button>
+				<br>
+				<button type="button" onclick="window.location.href='圈子.html'">圈子</button>
+				<br>
+				<button type="button" onclick="window.location.href='紧密中心度和强连通分量.html'">紧密中心度和强连通分量</button>
+				<div id="maincontent">
+						<div id="demo">
+						</div>
+            </div>
+			
+			<div id = "footer">
+		</div>
+	</body>
+	<script src = "show_main.js" charset = "utf-8"></script>
+</html>
